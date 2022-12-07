@@ -1,0 +1,880 @@
+---
+- S62172c69: codeceptjsTests
+  suites:
+  - Sa2fc7d9e: scenarios
+    suites:
+    - Sd1cd68e2: Days Without Shifts
+    - S33f6f502: RelatIn
+    - S1b19890e: BooqIn
+      tests:
+      - Tcca78263: Saving company name in created before reservation @Group3 @BooqIn
+      - T329397f4: Display the booqIn view @Group3 @BooqIn
+      - T60a0ee14: Create reservation with existing user @Group3 @BooqIn
+      - Tf6f80dac: Creating a reservation with setting the number of guests @Group3 @BooqIn
+      - Tc6c732f4: Create a reservation with a custom number of guests @Group3 @BooqIn
+      - Td4439c7a: Create reservation with credit card - check that booqIn reservation status shows "confirmed" @Group3 @BooqIn @Braintree
+      - T695fa965: Create reservation via online widget - check that booqIn reservation status shows "Confirmed" @Group3 @BooqIn
+      - T72f03092: Check confirmation and cancellation sent emails visibility in booqIn preview @Group3
+      - T0b5a02aa: Check that 'CC Requested' reservation status is shown for bookings without credit card details added @Group3 @Payments
+      - Tc429e06b: Create repeated reservation - daily + after -> check if it is displayed in "booqIn" @Group3 @BooqIn
+      - Tac5f9052: Check that reservations created in the online reservation buffer have status "provisional" @Group3 @BooqIn
+      - T4a952e63: Check that reservations gets created in confirmed status regardless customer "cc required" status in shift with payments inactive and "cc required by default" enabled @Group3 @Payments @BooqIn
+      - T7fd7be48: Check in booqIn if holiday message is displayed @Group3
+      - T378e61da: Check that fully booked timeslots are not displayed in suggestions @Group3 @BooqIn
+      - T45f985de: Check that hidden shift is not shown in suggestion @Group3 @BooqIn
+      - T59698075: Check if adding and deleting comment in existing reservation works @Group3 @BooqIn
+      - T7dd3f83b: Check that locked time slots remain unchanged when shift start/ end time is updated @Group3 @BooqIn
+      - T1070ae32: Check that new shift is shown on shift selection menu @Group3 @BooqIn
+    - Se3b7ed1c: Braintree
+    - S6e67f46f: Calendar
+    - S6d73c8ec: Customer Tags
+    - Sccf2e8ab: Dashboard
+    - Sf608b5e1: GraphQL Customers
+    - Seee5767f: GraphQL Reservations
+    - S5a3d8cd0: Group Reservations
+    - Sc724c54e: Lock Shift
+    - S51952c11: New Settings
+    - Sb395c6ef: Old Settings
+    - S33a65be1: Payments
+    - Sbcbd4bf0: DST
+      tests:
+      - Te151a1df: Create reservation in widged around the timechange date @DST
+      - Teaee9b56: Create walkIn reservation @DST @booqIn @walkIn
+      - T2be891ab: Create reservation and change its date to DST @DST @booqIn
+      - T7c99a9fe: Create reservation and change PAX @DST @booqIn @PAX
+      - Tf8069010: Edit shift settings and check if start time did not change @DST @shiftSettings
+    - S2ef76b87: ReportIn
+    - S37fe31c7: Reservation History
+    - Sd7ee6eea: Search Engine
+    - Se08ebf52: SeatIn
+    - S013160a5: SellIn
+    - Sabe9ecdc: Shared account
+    - Se1a9fa0f: Superuser Settings
+    - S502efd2b: Users Roles
+    - S7d447f79: Online Widget
+    - Sd114b710: Widget Covid Fields
+    - Sab7d704c: Widget Custom Fields
+    - See001880: Widget link extensions
+      tests:
+      - T68c0b8ae: Custom shift for widget @Group3 @WidgetCustomLink
+      - T61f52718: Set default date, groupcount and disable 1st step @Group3 @WidgetCustomLink
+    - Sd4bfebcb: Days Without Shifts
+      tests:
+      - Td6403dfe: Go from day with shifts to to the next day without shifts on booqIn view @Group1 @DaysWithoutShifts
+      - Tbb1693fc: Go from day without shifts to the next day with shifts on booqIn view @Group1 @DaysWithoutShifts
+      - T1dfb944e: Go from day without shifts to the next day without shifts on booqIn view @Group1 @DaysWithoutShifts
+      - T0d4c995a: Go from day with shifts to the next day with shifts on booqIn view @Group1 @DaysWithoutShifts
+      - Tc9736cb3: Go from day with shifts to the previous day with shifts on booqIn view @Group1 @DaysWithoutShifts
+      - Tf015c024: Go from day with shifts to the previous day without shifts on booqIn view @Group1 @DaysWithoutShifts
+    - Sc9ed5969: BooqIn
+    - S57dd7cc4: DST
+      tests:
+      - Tbae07cfa: Create walkIn reservation @DST @booqIn @walkIn
+      - T6399a1e2: Create reservation and change its date to DST @DST @booqIn
+      - Tbe3d475b: Create reservation and change PAX @DST @booqIn @PAX
+      - T6774be16: Edit shift settings and check if start time did not change @DST @shiftSettings
+      - T27fb5752: Create reservation in widged around the timechange date @DST
+    - S2f028bd1: Widget link extensions
+      tests:
+      - T0000C174: C174 Open walk in widget preview
+      - T000C2059: C2059 Open widget with specified 'Shift'
+      - T000C2060: C2060 Open widget with specified 'Default date' parametr
+      - T000C2061: C2061 Open widget with specified 'Default guest count'
+      - T000C6324: C6324 Open widget with skipping first screen
+    - S4762396d: Widget Custom Fields
+      tests:
+      - Tf385bc2a: Check that after setting the address fields field are optional in the widget @Group3 @WidgetCustomFields
+      - T0cc1d262: Creating a reservation with the customers address data @Group3 @WidgetCustomFields
+      - Ta604fb57: Check that after setting the address fields field are required in the widget @Group3 @WidgetCustomFields
+      - T4d99ebce: Creating a reservation with the customers company name @Group3 @WidgetCustomFields
+      - T06b6ae14: Check that when enabled the Company field is optional in the widget @Group3 @WidgetCustomFields
+      - T7af9ef89: Creating a reservation with the customer`s date of birth @Group3 @WidgetCustomFields
+      - Teac92b58: Check that after setting the date of birth field is required in the widget @Group3 @WidgetCustomFields
+      - T7881fc79: Creating a reservation with the acceptance of terms & conditions @Group3 @WidgetCustomFields
+      - Ta34e74ac: Check that after setting the terms & conditions field is required in the widget @Group3 @WidgetCustomFields
+      - T6a228c6c: Check if the terms & conditions page opens @Group3 @WidgetCustomFields
+      - T24af7f8f: Creating a reservation with the acceptance of privacy policy @Group3 @WidgetCustomFields
+      - Ta095afb3: Check that after setting the privacy policy field is required in the widget @Group3 @WidgetCustomFields
+      - T4112565e: Check if the privacy policy page opens @Group3 @WidgetCustomFields
+      - T6a1b7fcf: Add reservation comment in widget and check if it is correctly dispalyed in booqIn @Group3 @WidgetCustomFields
+    - S3f4b5e38: Widget Covid Fields
+      tests:
+      - T6eab1da9: Creating a reservation with the acceptance of privacy policy for COVID registration in the walk in widget @Group3 @WidgetCovidFields
+      - Tff41ccaa: Check that after setting the privacy policy field is required in the walk in widget @Group3 @WidgetCovidFields
+      - T48c83b60: Check if the privacy policy for COVID registration page opens @Group3 @WidgetCovidFields
+      - T081d22e9: Creating a reservation with filling in the registration fields of multiple customers in the walk in widget @Group3 @WidgetCovidFields
+      - Tdaab1c35: Check that after setting the multiple customers registration field are optional in the walk in widget @Group3 @WidgetCovidFields
+      - Te3794ed4: Creating a reservation with filling in the registration fields of multiple customers in the widget @Group3 @WidgetCovidFields
+      - T984c3f4f: Check that after setting the multiple customers registration field are optional in the widget @Group3 @WidgetCovidFields
+    - S6403877c: Online Widget
+      tests:
+      - Tbe8be885: Create reservation using the walk in widget (happy path) @Group4 @Widget
+      - Ta65381f7: Check confirmation email visability in full form for reservations created in widget @Group4 @Widget
+      - Tb8be9359: Check that "additional information in the widget" message is displayed in widget @Group4 @Widget
+      - T1050b861: Check if holiday message is displayed in widget @Group4
+      - Tbd1c972c: Check that reservation is not created via widget when there is no available table for selected guestCount @Group4 @BooqIn
+    - S2f771af2: Users Roles
+      tests:
+      - Teda71314: Relog to account-owner @Group4 @UsersRoles
+      - T671429e7: Create service role @Group4 @UsersRoles
+    - S35b88994: Superuser Settings
+      tests:
+      - T049e93f3: Register wordpress restaurant + Start aleno @Group4 @SuperuserSettings
+      - T7dbbf835: Register wordpress restaurant + Open widget @Group4 @SuperuserSettings
+    - S93d24e68: Shared account
+      tests:
+      - T93700459: Create reservation as a shared account with global and local settings @Group4 @SharedAccount
+      - T539776a4: Check that after clearing the creator field, the reservation cannot be saved until it is completed
+      - Tb10705eb: Check that after clearing the creator field, the reservation cannot be saved until it is completed @Group4 @SharedAccount  @Group4 @SharedAccount
+      - T34df506c: Check that the global settings are in the local settings of the restaurant @Group4 @SharedAccount
+      - T5135bf5a: Configure the fields for shared account in local restaurant settings @Group4 @SharedAccount
+      - T5afb43b8: Reset restaurant settings to global settings @Group4 @SharedAccount
+      - T0973d6e4: Create reservation as a shared account with global settings @Group4 @SharedAccount
+      - T479f7748: Edit reseration as a shared account with local settings @Group4 @SharedAccount
+      - Te5f07d0c: Check that after clearing the creator field, the reservation cannot be saved until it is completed @Group-07 @SharedAccount @Group-07 @SharedAccount
+    - Sfcdb2218: SellIn
+      tests:
+      - T6c2faa16: Verify elements on sellIn view @Group1 @SellIn
+    - S762fd05d: SeatIn
+      tests:
+      - Ta82781b5: Check table assignments match "BrainMinimumStayTime" setting @Group1 @BooqIn
+      - T588689ff: Check that reservations matching time on a parallel shift are shown on both shifts @Group1 @BooqIn
+      - T972bb50c: Verify elements visible on the reservations without table view @Group1 @SeatIn
+      - T8ca6e01f: Display the seatIn view @Group1 @SeatIn
+      - Tc792d35d: Create reservation in seatIn @Group1 @SeatIn
+      - T7eb92306: Create reservation by using client form @Group1 @SeatIn
+      - Tf9806812: 'Create reservation by using client form - Adding two: company names, email address, phone numbers @Group1 @SeatIn'
+      - T64575a02: Check Brain configuration inheritance @Group1 @BooqIn
+      - Tc5e85a9d: Check that reservations are auto-reassigned when guest count is updated @Group1 @BooqIn @C8163
+      - Tf1d92e1d: Check that updating or removing Brain configurations is reflected on lower levels @Group1 @BooqIn @C8152
+      - T1f917051: Create walkIn reservation @Group1 @SeatIn
+      - Td2fa45af: Move reservation between shifts @Group1 @SeatIn
+      - Td7d660f0: Move reservation between restaurants @Group1 @SeatIn
+      - Te59b173f: WalkIn - Change a customer after creating reservation @Group1 @SeatIn
+      - T829bb758: Editing reservation - "save changes" alert - saving/discarding  changes after confirming the alert - PAX @Group1 @reportIn
+      - T57f75ed2: Assigning table by double click and clicking on other reservation @Group1 @SeatIn
+      - T89d21a29: Check that only reservations with tableCapacity matching guestCount are auto-assigned to a table @Group1 @BooqIn
+      - Tdcd8c142: Check that table assignment durations match default "durationOfReservation" @Group1 @BooqIn
+    - S898a7fde: Search Engine
+      tests:
+      - T79fe55d1: Check if the created reservation can be found @Group1 @SearchEngine
+      - T7ced88e0: Check if search returns correct message when a user doesn't exist @Group1 @SearchEngine
+    - Sc83c313e: Reservation History
+      tests:
+      - T31a8b8b4: Check that the empty reservation history is visible in the reservation creation panel,  with disabled feature 'Full reservation history' @Group1 @ReservationHistory
+      - Tbabfff36: Check that after changing reservation status, the 'History' section is visible with disabled feature 'Full reservation history' @Group1 @ReservationHistory
+      - Ta8203e07: Check that the empty reservation history is visible in the reservation creation panel, with enabled feature 'Full reservation history' @Group1 @ReservationHistory
+      - T1328e2ae: Check that after changing reservation status, the 'History' section is visible with enabled feature 'Full reservation history @Group1 @ReservationHistory
+    - S52ba1e63: ReportIn
+      tests:
+      - T0e2b9d7d: Verify visibility of elements in reportIn view @Group1 @reportIn
+    - Sbafe5171: RelatIn
+      tests:
+      - Td2295fbb: Display the relatIn view @Group1 @RelatIn
+      - T1329d00d: Search existing user in relatIn @Group1 @RelatIn
+      - Taaa03af7: Check in relatIn the display of the customers address added via widget @Group1 @RelatIn
+      - Ta97f9e15: Add a customer with a company @Group1
+      - Td13a1d0a: Remove a company from a customer @Group1
+      - T286be880: Add a customer with 2 companies and remove 1 @Group1
+      - Tacde592c: Edit a customer with a company @Group1
+      - T61ef42dc: Edit a customer without a company @Group1
+      - Tec279b56: Check if the date of birth is displayed properly in relatIn view @Group1
+    - S78281c57: Payments
+      tests:
+      - T238ed6e7: Check that when creating a reservation, the reservation status is auto-updated depending on guest "credit card required" status @Group1 @Payments
+      - T8e455871: Check that reservation statuses for existing reservations remain unchanged when a guest cc required status is updated @Group1 @Payments
+      - T3ee28a37: Check that credit card tag is visible on just created reservations for customer with disabled cc required when cc required by default enabled @Group1 @Payments
+      - Tf1ef7898: Verify that reservation with CC Required status gets auto dissmissed after given time @Group4 @Payments
+    - S21ae6962: Old Settings
+      tests:
+      - T99ee1cfc: Enable unreleased features @Group3 @OldSettings
+    - S181312fd: New Settings
+      tests:
+      - Td5650ec7: Open widget customization settings @Group4 @NewSettings
+      - T19a9df7f: User logout @Group4 @NewSettings
+      - T4e7fdbc5: Open walk in widget preview @Group4 @NewSettings
+      - Tee8d862d: Open widget @Group4 @NewSettings
+      - T2f8460c5: Create reservations using the widget (happy path) @Group4 @NewSettings
+      - Ta4587644: Check that personal data fields are required in the widget @Group4 @NewSettings
+      - T4e0df020: Check that you can only create one reservation per day for the same customer @Group4 @NewSettings
+      - Tade983d5: Check that the Privacy policy link field is required @Group4 @NewSettings
+      - Td336b9b3: 'Open COVID-19: Guest registration settings @Group4 @NewSettings'
+      - T5be6058a: Check that the Privacy policy for COVID registration link field is required @Group4 @NewSettings
+      - T97e9a7f2: Check that after activating multiple customers registration, at least one companion information checkbox must be selected @Group4 @NewSettings
+      - Ta19c0fe1: Enable room for the shifts @Group4
+    - Sf17e3b64: Login
+      tests:
+      - T3d06a822: Login as superuser @Group3 @Login
+    - Sbfc45c91: Lock Shift
+      tests:
+      - Tdccad0c4: Display shift lock settings in calendar @Group4 @LockShift
+      - Ta64f9e30: Display shift lock settings in shift settings @Group4 @LockShift
+      - Tbcc20f24: Lock the entire shift for guests and check that the day is not in the suggestion @Group4 @LockShift
+      - T5962cd48: Lock the entire shift for staff and check that there are new additional confirmations @Group4 @LockShift
+      - Ta54412f2: Lock selected time slot for guests and check that it is not displayed in the suggestion
+      - T9f607367: Lock selected time slot for staff and check that there are new additional confirmations @Group4 @LockShift
+      - T1a06957d: Lock the entire shift for staff and check that the day is not in the suggestion @Group4 @LockShift
+      - T75d77e4e: Move reservation to a locked selected time for staff @Group4 @LockShift
+      - T2f73d647: Move reservation from the locked shift for staff to the unlocked @Group4 @LockShift
+      - Tdfff9628: Move reservation from the ulocked shift for staff to the locked @Group4 @LockShift
+      - T7bc369bf: Check that after locking the shift for guests, the settings apply only to the selected day @Group4 @LockShift
+      - Ta1f33a13: Check that after locking the shift for guests, it is not available in the online widget @Group4 @LockShift
+      - Tc31d8f23: Check that after locking the shift for staff, it is not available in the online widget @Group4 @LockShift
+      - T437cf63a: Lock selected time slot for guests and check that it is not displayed in the suggestion @Group4 @LockShift
+      - T5ea0ac5e: Lock selected time slot for staff and check that it is not displayed in the suggestion @Group4 @LockShift
+      - T90d7a301: Service role - Locking shift and time slot when shift capacity is not reached @Group4 @LockShift
+      - T7b8cba09: Service role - Locking shift and time slot when shift capacity is reached @Group4 @LockShift
+      - T58fc16e4: Service role - Locking shift and time slot when shift capacity is exceeded @Group4 @LockShift
+      - Tbb2afc4a: Lock selected time slot for guests and check that it is not displayed in the suggestion @Group4 @LockShift  @Group4 @LockShift
+    - Scaad7173: Group Reservations
+      tests:
+      - T717eb95e: Set the default group seating time  @Group3 @GroupReservations @Scaad7173
+      - Tab86df38: Activate group reservation with default settings @Group3 @GroupReservations
+      - Tc63deae6: Check that it is not possible to make a group reservation if 'Max number of groups per shift' is set to 0 @Group3 @GroupReservations
+      - Tf7ccc5e2: Create a reservation within the max number of groups per shift limit @Group3 @GroupReservations
+      - T0f50febc: Check that after editing and increasing the limit of the maximum number of groups per shift, you can create another reservation for the same day @Group3 @GroupReservations
+      - T51914abc: Check that you cannot make a reservation for the same day after exceeding the total amount of people for all group requests @Group3 @GroupReservations
+      - T9d682853: Set the default group seating time @Group3 @GroupReservations
+    - S9f8cb438: GraphQL Reservations
+      tests:
+      - T756e80a7: Create reservations using duration @Group4 @GQL @Reservations
+      - Tbc5d08ca: Create reservations using endTime @Group4 @GQL @Reservations
+      - T4866b1d0: Create reservations using duration & endTime @Group4 @GQL @Reservations
+    - Sfd0a623d: GraphQL Customers
+      tests:
+      - T35d1356e: Fetch all @Group4 @GQL
+      - T1f93fb95: Fetch by firstName @Group4 @GQL
+      - T211c72ff: Fetch by lastName @Group4 @GQL
+      - T1466f495: Fetch by email @Group4 @GQL
+      - Tf114896b: Fetch by phone @Group4 @GQL
+      - T2c35f7c8: Fetch by birthday @Group4 @GQL
+      - T99e2be1c: Fetch by sex @Group4 @GQL
+      - Tc04eff5b: Fetch by taxId @Group4 @GQL
+      - T3594b212: Fetch by all @Group4 @GQL
+    - S79868dad: Dashboard
+      tests:
+      - T585019bd: Verify elements visible on the dashboard  @Group4 @Dashboard @S79868dad
+      - T9a722c16: Verify elements visible on the dashboard @Group4 @Dashboard
+    - S9b6a4805: Customer Tags
+      tests:
+      - T8575e3e7: Verify classic customer tags functionality works properly @Group2 @CustomerTags
+      - Ta5d0ef2e: Verify new feature customer tags functionality can be enabled with old settings @Group2 @CustomerTags
+      - Tffe8a88c: Verify new feature customer tags functionality works properly @Group2 @CustomerTags
+      - T87ef749a: Remove the tag that has been added to the customer (+ check in 'customer tags' settings and 'booqIn') @Group2  @CustomerTags
+      - T33f4595e: Remove the tag that has been added to the customer (+ check in 'relatIn') @Group2 @CustomerTags
+    - S2525fef9: Calendar
+      tests:
+      - Tb6ce0914: Display the calendar view @Group2 @Calendar
+      - T23c35901: Switch from the calendar view to the shift settings view using shift cell option @Group2 @Calendar
+      - Tcce08c1a: Switch from the calendar view to the seatIn view using shift cell option @Group2 @Calendar
+      - T328ef359: Close and open left panel in Calendar view @Group2 @Calendar
+      - T14850682: Add internal note in calendar view and check visibility in booqIn @Group2 @Calendar
+      - T5e27ada9: Add external note in calendar view @Group2 @Calendar
+      - T921aebfd: Daily shift - creating and deleting @Group2
+      - Tfb924159: Check external note visibility in new widget @Group2
+      - T15f3309e: Check if hide shift functionality works properly @Group2
+      - Tc4328cc3: Check if in calendar Holidays are displayed @Group2 @Calendar
+    - Sa5e2b6e2: Braintree
+      tests:
+      - T81ae5e9c: Widget - Creating reservation with credit card @Group2 @Braintree
+      - T5c7c452f: Enable Braintree for the shifts - check that "amount" and "Link to T&C" are required @Group2 @Braintree
+      - T773f6611: Widget - Check that the "Terms and conditions link" field is required if Braintree is enabled @Group2 @Braintree
+      - T7776cf18: Widget - Check the validation of credit card fields when braintree is enabled @Group2 @Braintree
+      - T3b48ddd7: Booqin - Creating reservation with credit card @Group2 @Braintree
+      - Te5a3a611: Booqin - Add credit card details in created before reservation @Group2 @Braintree
+      - T438e77fe: Booqin - Check the validation of credit card fields @Group2 @Braintree
+      - T407f5312: Check that the reservation with credit card details is visible in the Braintree panel @Group2 @Braintree
+      - T40243d6f: Check that the reservation with credit card details is visible in the No Show panel @Group2 @Braintree
+- S79e6661c: Aleno.me E2E tests
+  suites:
+  - Scbcc3219: BooqIn
+  - S9692ae0d: Voucher
+    tests:
+    - T040b133a: Add, delete, edit and book a voucher @Group4 @Voucher @C1542 @C1544 @C1545 @C1546 @C1547 @C1551 @C1552 @S6940
+    - T5deb7df2: Add and buy voucher with braintree @Group4 @Voucher @C1548 @C1549 @C1550 @C1554 @S6941
+  - S55636fda: Reservations without table
+  - S0f062852: Help and tutorials
+    tests:
+    - Tda5b6aca: Walkthrough - Learn how to add reservations @Group2 @HelpAndTutorials
+- S26760828: Test cases
+  suites:
+  - S3aa3aefb: Login
+    tests:
+    - T00000C82: C82 Login as superuser @automated
+    - T000C2115: C2115 Reset password
+  - Sf07f69ed: dashboard
+    tests:
+    - T0000C102: C102 Display the dashboard view @automated
+    - T0000C109: C109 Display the 'Reservations without table assignment' view @automated
+    - T0000C110: C110 Display the 'Provisional' view
+    - T0000C111: C111 Display the 'Reservations without shifts' view
+    - T0000C227: C227 Check that the reservation with credit card details is visible in the Braintree panel @automated
+    - T0000C228: C228 Charge reservation fee in the Braintree
+    - T0000C229: C229 Archive reservation fee in the Braintree @automated
+    - T0000C230: C230 Show archived reservation fee in Braintree @automated
+    - T0000C231: C231 Check that the reservation with credit card details is visible in the No Show panel @automated
+    - T0000C232: C232 Charge reservation fee in the No Show
+    - T0000C233: C233 Archive reservation fee in the No Show @automated
+    - T0000C234: C234 Show archived reservation fee in No Show @automated
+    - T000C6993: C6993 Check that charging and voiding no shows are disabled for yoordi payments
+    - T000C4680: C4680 Create a online reservation with valid cc details (Yoordi Payments)
+    - T000C6996: C6996 Check that charging no show reservations is possible for datatrans payments
+    - T000C7000: C7000 Check that voiding payment for no show reservations is NOT possible when authorisation amount is not needed
+    - T000C7001: C7001 Check that voiding payment for no show reservations is possible when authorisation amount is needed
+    - T000C7008: C7008 Check that the authorisation amount is shown on the payment widget when authorisation amount is needed
+    - T000C7012: C7012 Create an online reservation with datatrans payments enabled
+    - T000C7609: C7609 Check that credit card details can be added when rebooking a cancelled reservation
+    - T000C7610: C7610 Check that time shown in 'Add credit card' link is the same as the reservation time
+  - S99bfc7ee: calendar
+    tests:
+    - T0000C103: C103 Display the calendar view @automated
+    - T0000C184: C184 Switch from the calendar view to the shift settings view using shift cell option @automated
+    - T0000C185: C185 Select the day to be displayed in booqIn and seatIn @automated
+    - T0000C245: C245 Switch from the calendar view to the seatIn view using shift cell option @automated
+    - T0000C246: C246 Close and open calendar menu @automated
+    - T0000C247: C247 Display shift lock settings in calendar @automated
+    - T0000C257: C257 Add internal note in calendar view and check visibility in booqIn @automated
+    - T0000C258: C258 Add external note ad check visibility in calendar viewÂ @automated
+    - T0000C696: C696 Creating daily shift @automated
+    - T0000C697: C697 Changing shift type from daily to global @automated
+    - T000C1030: C1030 Check external note visibility in new widget - calendar preview @automated
+    - T000C1366: C1366 Hide shift @automated
+    - T000C1367: C1367 Show hidden shift @automated
+    - T000C1370: C1370 Cancel hiding the shift @automated
+    - T000C1371: C1371 Cancel unhiding the shift @automated
+    - T000C2183: C2183 Check if in calendar Holidays are displayed
+  - S8d6fdb67: booqIn
+    tests:
+    - T00000C89: C89 Add customer data to the data base
+    - T00000C90: C90 Create reservation with existing user
+    - T0000C104: C104 Display the booqIn view
+    - T0000C129: C129 Saving company name in created before reservation
+    - T0000C142: C142 Check that the booking with the company name created by the widget is displayed
+    - T0000C166: C166 Add a tag to the customer who has created before reservation (+ check in relatIn)
+    - T0000C186: C186 Go from day with shifts to to the next day without shifts on booqIn view (2 days off)
+    - T0000C187: C187 Go from day without shifts to the next day without shifts on booqIn view (2 days off)
+    - T0000C188: C188 Go from day without shifts to the next day with shifts on booqIn view (2 days off)
+    - T0000C189: C189 Go from day with shifts to the next day with shifts on booqIn view (2 days off)
+    - T0000C190: C190 Go from day with shifts to the previous day with shifts on booqIn view (2 days off)
+    - T0000C196: C196 Go from day with shifts to the previous day without shifts on booqIn view (2 days off)
+    - T0000C198: C198 [UNNECESSARY] Go from day with shifts to to the next day without shifts on booqIn view (only 1 day is on)
+    - T0000C199: C199 [UNNECESSARY] Go from day without shifts to to the next day with shifts on booqIn view (only 1 day is on)
+    - T0000C200: C200 [UNNECESSARY] Go from day without shifts to to the next day without shifts on booqIn view (only 1 day is on)
+    - T0000C226: C226 Change the status to 'No Show' in created before reservation
+    - T0000C281: C281 Check that after clearing the creator field, the reservation cannot be saved until it is completed
+    - T0000C707: C707 Create a reservation with a customer with a company
+    - T0000C708: C708 Disable company in created reservation
+    - T000C1369: C1369 Check that hidden shift is not shown in booqIn
+    - T000C1520: C1520 [TODO] Walk In - Check that it is not possible to save and edit reservations without the customer's name
+    - T000C1581: C1581 Create a reservation for the created customer account with the date of birth
+    - T000C1585: C1585 Edit customer gender in existing reservation
+    - T000C1651: C1651 Check that the group booking is visible and has a pre-set category
+    - T000C1649: C1649 Check that the group reservation has edited default group seating time
+    - T000C1658: C1658 Check that the group reservation has a pre-set default group seating time
+    - T000C1599: C1599 Check that the group reservation has a pre-set advanced group seating time
+    - T000C1660: C1660 Check that after removing second advanced group seating time , both reservations have the same time despite the difference in group size
+    - T000C1662: C1662 Check that after editing second advanced group seating time , both reservations have the same time despite the difference in group size
+    - T000C2182: C2182 Check in booqIn if holiday message is displayed
+    - T000C2204: C2204 Check that new reservation form is opened after saving a reservation only when 'save and create' form option is enabled
+    - T000C3156: C3156 Check that a reservation created via online widget has 'Confirmed' status
+    - T000C3595: C3595 Check that reservation created via online widget with braintree enabled has status 'confirmed'
+    - T000C4198: C4198 Check that selecting a guest does not auto-switch the reservation status when creating a new reservation
+    - T000C6143: C6143 Check that reservations created in the online reservation buffer have status 'provisional'
+    - T000C6983: C6983 Check that reservations gets created in confirmed status regardless customer 'cc required' status in shift with payments inactive and 'cc required by default' enabled
+    - T0000C114: C114 Check that after changing reservation status, 2 entries are visible in the 'History' section with enabled feature 'Full reservation history'
+    - T0000C115: C115 Check that after opening 'History' section, the entry is visible with enabled feature 'Full reservation history'
+    - T0000C116: C116 Check that after changing reservation status, 2 entries are visible in the 'History' section with disabled feature 'Full reservation history'
+    - T0000C117: C117 Check that after opening 'History' section, the entry is visible with disabled feature 'Full reservation history'
+    - T0000C208: C208 Create a booking with additional guest details
+    - T0000C209: C209 Add guest details in created before reservation
+    - T0000C210: C210 Check if the guest data saved in the created reservation is displayed
+    - T0000C220: C220 Create reservation with credit card data
+    - T0000C221: C221 Add credit card details in created before reservation
+    - T0000C222: C222 Check that credit card details are included in the reservation
+    - T0000C223: C223 Create reservation with credit card data - Check the validation of credit card fields
+    - T0000C241: C241 Check if the 'History' entry is visible in the reservation creation panel, with disabled feature 'Full reservation history' (TODO)
+    - T0000C242: C242 Check if the 'History' entry is visible in the reservation creation panel, with enabled feature 'Full reservation history' (TODO)
+    - T000C2195: C2195 Create repeated reservation - daily + after -> check if it is displayed in 'Reservation tab'
+    - T000C2198: C2198 Create repeated reservation - daily + after -> check if it is displayed in 'booqIn'
+    - T000C2650: C2650 Check that the 'date' parameter for a single reservation that is part of a repeated reservation can be updated
+    - T000C3596: C3596 Create confirmed reservation in booqIn and check if email is visible in preview
+    - T000C3597: C3597 Cancel reservation in booqIn and check if email is visible in preview
+    - T000C6145: C6145 Check that reservation statuses for existing reservations remain unchanged when a guest's cc required status is updated
+    - T000C4205: C4205 Check that reservations created via online widget with invalid credit card details have reservation status 'cc requested'
+    - T000C4206: C4206 Check that reservations created via online widget with valid credit card details have reservation status 'confirmed'
+    - T000C4207: C4207 Check that reservation status auto-switches from 'cc requested' to 'confirmed' for reservations with credit card details added via email link
+    - T000C6144: C6144 Check that when creating a reservation, the reservation status is auto-updated depending on guest 'credit card required' status
+    - T000C2208: C2208 Check that 'Provisional' reservation status is updated to 'Confirmed' when credit card details are corrected
+    - T000C2209: C2209 Check that a reservation with invalid credit card details is auto-dismissed in accordance with the payment settings
+    - T000C2210: C2210 Check that a reservation with invalid credit card details is not auto-dismissed when 'auto-dismiss reservation' is disabled in payment settings
+    - T000C2211: C2211 Check that 'auto-dismiss reservation' period countdown starts when reservation status is set to 'CC requested'
+    - T000C3657: C3657 Check that credit card tag is visible on just created reservations with cc required by default
+    - T000C3667: C3667 Check that 'CC Requested' reservation status is shown for bookings without credit card details added when payments is enabled
+    - T000C3668: C3668 Check that reservation gets autodismissed after specified time when cc details are not provided
+    - T000C3669: C3669 Check that credit card tag is visible on just created reservations with cc not required by default
+    - T000C3670: C3670 Check that credit card tag is automatically changed after adding cc details to reservation
+    - T000C6147: C6147 Check that credit card tag is visible on just created reservations for customer with disabled 'cc required' when 'cc required' by default enabled
+    - T000C6148: C6148 Check that credit card tag is visible on just created reservations for customer with enabled 'cc required' when 'cc required' by default disabled
+    - T000C6149: C6149 Check that reservations gets created in confirmed status regardless customer 'cc required' status in shift with payments inactive and 'cc required by default' enabled
+    - T000C6150: C6150 Check that reservations gets created in confirmed status regardless customer 'cc required' status in shift with payments inactive and 'cc required by default' disabled
+    - T000C6151: C6151 Check that customers cc details are not required for new customers when 'cc is not required by default' for a restaurant (+ check in relatIn)
+    - T000C6152: C6152 "Check that customer cc details are required for new customers when cc required is enabled for restaurant. ( + check in relatIn)
+    - T000C4204: C4204 Check that auto-dismiss reservation countdown begins when reservation status is set to 'cc requested'
+    - T000C2717: C2717 Check 'hotel guest' reservation tag is added for guests with a hotel booking
+    - T000C6659: C6659 Check that hotel booking information are displayed in suggested customer dropdown - date of hotel booking
+    - T000C6660: C6660 Check that hotel booking information are displayed in suggested customer dropdown - date before hotel booking
+    - T000C6661: C6661 Check that hotel booking information are not displayed in suggestion customer dropdown - date after hotel booking
+    - T000C6662: C6662 Create a hotel booking for existing customer using graphql
+    - T000C6678: C6678 Check that hotel booking information are displayed in reservation full form - date of hotel booking
+    - T000C6679: C6679 Check that hotel booking information are not displayed in reservation full form - date before hotel booking
+    - T000C6681: C6681 Check that customer PMS description is correctly displayed in comment popup
+    - T000C6682: C6682 Check that customer PMS description is correctly displayed in customer profile
+    - T000C6684: C6684 Check that fully booked timeslots are not displayed in suggestions
+    - T000C6685: C6685 Check that fully booked shift is not displayed in suggestions
+    - T000C1543: C1543 Check that hidden shift is not shown in suggestion
+    - T0000C249: C249 Lock the entire shift for guests and check that the day is not in the suggestion
+    - T0000C250: C250 Unlock the entire shift for guests and check that the day is visible in the suggestion
+    - T0000C251: C251 Lock selected time slot for guests and check that it is not displayed in the suggestion
+    - T0000C252: C252 Unlock blocked time slot for guests and check that it is displayed in the suggestion
+    - T0000C253: C253 Lock the entire shift for staff and check that there are new additional confirmations
+    - T0000C254: C254 Unlock the entire shift for staff and check that there are no additional confirmations
+    - T0000C255: C255 Lock selected time slot for staff and check that there are new additional confirmations
+    - T0000C256: C256 Unlock blocked time slot for staff and check that there are no additional confirmations
+    - T0000C259: C259 Move reservation to a locked selected time for staff
+    - T0000C260: C260 Move reservation from the locked time to the unlocked
+    - T0000C261: C261 Check that after locking the shift for guests, the settings apply only to the selected day
+    - T0000C266: C266 Move reservation to a locked shift for staff
+    - T0000C267: C267 Move reservation from the locked shift for staff to the unlocked
+    - T0000C268: C268 Lock the entire shift for staff and create walk in reservation
+    - T0000C279: C279 Service role - Locking shift and time slot when shift capacity is not reached
+    - T0000C699: C699 Service role - Locking shift and time slot when shift capacity is reached
+    - T0000C700: C700 Service role - Locking shift and time slot when shift capacity is exceeded
+    - T00000C94: C94 Create walkIn reservation
+    - T0000C709: C709 WalkIn - Change a customer after creating reservation
+    - T000C2202: C2202 Check that only customer name is mandatory when creating a walkIn reservation
+    - T000C2201: C2201 Check that customer name is required when creating or editing a walkIn reservation
+    - T000C2199: C2199 Check that customer name is mandatory when creating or editing a walkIn reservation
+    - T000C2200: C2200 Check that only customer name is required when creating a walkIn reservation
+    - T000C7688: C7688 Check that emails sent to guest are delivered successfully
+    - T000C7750: C7750 Check that locked timeslots remain locked when timeslot duration is updated
+    - T000C7751: C7751 Check that locked timeslots remain unchanged when shift start/ end time is updated
+    - T000C7790: C7790 Check that directly booked reservations are auto dismissed after 5 minutes
+    - T000C7611: C7611 Check that auto dismiss reservation duration is restarted when reservation status is switched to 'cc requested
+    - T000C7841: C7841 Create a reservation with comment and check that it's correctly displayed
+    - T000C7842: C7842 Add comment in existing reservation and check that it's correctly displayed
+    - T000C7843: C7843 Delete comment from reservation and check that it's not displayed anymore
+  - S83a60fb2: seatIn
+    tests:
+    - T00000C91: C91 Creating a reservation with setting the number of guests
+    - T00000C92: C92 Create a reservation with a custom number of guests
+    - T00000C93: C93 Move reservation to other shift
+    - T00000C95: C95 Create reservation in seatIn
+    - T00000C96: C96 Create reservation by using client form - Adding two company names
+    - T00000C97: C97 Create reservation by using client form - Adding two email address
+    - T00000C98: C98 Create reservation by using client form - Adding two phone numbers
+    - T00000C99: C99 Create reservation by using client form
+    - T0000C105: C105 Display the seatIn view
+    - T0000C191: C191 [UNNECESSARY] Go from day with shifts to to the next day without shifts on seatIn view (2 days off)
+    - T0000C192: C192 [UNNECESSARY] Go from day without shifts to the next day without shifts on seatIn view (2 days off)
+    - T0000C193: C193 [UNNECESSARY] Go from day without shifts to the next day with shifts on seatIn view (2 days off)
+    - T0000C194: C194 [UNNECESSARY] Go from day with shifts to the next day with shifts on seatIn view (2 days off)
+    - T0000C195: C195 [UNNECESSARY] Go from day with shifts to the previous day with shifts on seatIn view (2 days off)
+    - T0000C201: C201 [UNNECESSARY] Go from day with shifts to the previous day without shifts on seatIn view (2 days off)
+    - T0000C202: C202 [UNNECESSARY] Go from day with shifts to to the next day without shifts on seatIn view (only 1 day is on)
+    - T0000C203: C203 [UNNECESSARY] Go from day without shifts to to the next day with shifts on seatIn view (only 1 day is on)
+    - T0000C204: C204 [UNNECESSARY] Go from day without shifts to to the next day without shifts on seatIn view (only 1 day is on)
+    - T0000C236: C236 Moving reservation between restaurants
+    - T000C1537: C1537 Editing reservation - "save changes" alert - saving changes after confirming the alert - PAX
+    - T000C1538: C1538 Editing reservation - "save changes" alert - saving changes after confirming the alert - PAX and table
+    - T000C1539: C1539 Editing reservation - "save changes" alert - saving changes after confirming the alert - PAX, table, PAX
+    - T000C1540: C1540 Editing reservation - "save changes" alert - rejecting changes - PAX
+    - T000C1541: C1541 Editing reservation - "save changes" alert - rejecting changes - PAX, table, PAX
+    - T000C2203: C2203 Check that a new reservation form is opened after saving a reservation only when 'save and create' form option is enabled
+    - T000C1523: C1523 Assigning table by double click and clicking on other reservation
+    - T000C1524: C1524 Assigning table by single click and clicking on other reservation
+    - T000C1525: C1525 Assigning table by table input and clicking on other reservation
+    - T000C1528: C1528 Assigning table by table input in full form and clicking on other reservation
+    - T000C1529: C1529 Reassigning table by drag and drop and clicking on other reservation
+    - T000C1530: C1530 Reassigning table by table input and clicking on other reservation
+    - T000C1531: C1531 Assigning table by drag and drop and clicking on other reservation
+    - T000C1532: C1532 Deleting table by double click and clicking on other reservation
+    - T000C1533: C1533 Deleting table by single click and clicking on other reservation
+    - T000C1534: C1534 Deleting table by table input and clicking on other reservation
+    - T000C1535: C1535 Deleting table by table input in full form and clicking on other reservation
+    - T000C1536: C1536 Assigning table by double click and pressing "Cancel" button
+    - T000C1647: C1647 Reassigning table by moving table clock
+    - T000C2651: C2651 Check that tables can be reassigned and saved automatically from the table plan
+    - T000C3601: C3601 Assign a reservation to table
+    - T000C6140: C6140 check that reservations assigned to a global table are updated upon removing the global table
+    - T000C6141: C6141 check that reservations assigned to a daily table plan created from global table plan are unaffected when the global table plan is removed
+    - T000C6142: C6142 check that reservations of other daily table plans are unaffected when a single daily table plan is removed
+    - T000C6683: C6683 Check that table assignment is visible when using global search for reservation
+    - T000C7669: C7669 Check that updating table name in room for a day shift does not affect table names for other shifts
+  - S3fbe5a7b: sellIn
+    tests:
+    - T0000C106: C106 Display the sellIn view
+    - T000C1551: C1551 Check that the voucher purchase transaction is visible
+    - T000C1552: C1552 Add transaction to voucher purchase
+    - T000C1553: C1553 Check that the 'Via' field is mandatory when adding a transaction
+    - T000C1554: C1554 Set voucher status as used
+  - S49601ddb: relatIn
+    suites:
+    - S499b227d: relatIn
+      tests:
+      - T0000C107: C107 Display the relatIn view
+      - T0000C141: C141 Check the display of the customer's address data
+      - T0000C243: C243 Add customer to the data base via RelatIn
+      - T0000C244: C244 Search by full name existing customerÂ
+      - T0000C701: C701 Add a customer with a company
+      - T0000C702: C702 Remove a company from a customer
+      - T0000C703: C703 Add a customer with 2 companies
+      - T0000C704: C704 Remove one of the two companies
+      - T0000C705: C705 Edit a customer with a company
+      - T0000C706: C706 Edit a customer without a company
+      - T000C1570: C1570 Add a customer by selecting the date of birth in the format 'DD.MM.YYYY'
+      - T000C1572: C1572 Add a customer, writing down the date of birth in the format 'DD.MM.YYYY'
+      - T000C1573: C1573 Add a customer by selecting the date of birth in the format 'Month/Day/Year'
+      - T000C1574: C1574 Add a customer, writing down the date of birth in the format 'Month/Day/Year'
+      - T000C1575: C1575 Add a customer by selecting the date of birth in the format 'Year-Month-Day'
+      - T000C1576: C1576 Add a customer, writing down the date of birth in the format 'Year-Month-Day'
+      - T000C1578: C1578 Add a customer by selecting the date of birth in the format 'DD MM YYYY'
+      - T000C1579: C1579 Add a customer, writing down the date of birth in the format 'Year-Month-Day'
+      - T000C1584: C1584 Add a customer and set a gender
+      - T000C1587: C1587 Check if gender is correctly displayed in column for created customer
+      - T000C6340: C6340 Check if the date of birth is displayed properly in relatIn view
+      - T000C6680: C6680 Check that all customer information are correctly displayed in relatIn row
+    - S671a0b6a: customers tags
+      tests:
+      - T0000C149: C149 Cancel removing the tag
+      - T0000C150: C150 Remove the tag
+      - T0000C151: C151 Cancel editing the tag
+      - T0000C152: C152 Edit the tag
+      - T0000C153: C153 Search by text for a tag that exists
+      - T0000C155: C155 Search by text for a non-existent tag
+      - T0000C156: C156 Remove a tag for a customer
+      - T0000C157: C157 Remove the tag that has been added to the customer (+ check in 'customer tags' settings and 'booqIn')
+      - T0000C158: C158 Remove the suggested tag for a customer
+      - T0000C159: C159 Edit the tag that has been added to the customer (+ check in 'customer tags' settings and 'booqIn')
+      - T0000C162: C162 Cancel adding a new Tag
+      - T0000C163: C163 Add a suggested tag to the customer
+      - T0000C164: C164 Add a tag to the customer
+      - T0000C165: C165 Add a new Tag (+ check in 'customer tags' settings and 'booqIn')
+  - Sfe6653ed: reportIn
+    tests:
+    - T0000C108: C108 Display the reportIn view
+    - T000C1586: C1586 Check if gender is correctly displayed in column for created reservation
+  - Sf461d7a0: print
+    tests:
+    - T000C3598: C3598 Check if print preview works for shift without any resrevation
+    - T000C3599: C3599 Check if print preview works for shift with some resrevations
+    - T000C3600: C3600 Check if print preview works for shift with reservation assign to room and tables
+  - S3b4e18ea: search
+    tests:
+    - T0000C112: C112 Check if the created reservation can be found
+    - T0000C113: C113 Check if search returns correct message when a user doesn't exist
+  - Sb1da77e0: info
+    tests:
+    - T0000C100: C100 Walkthrough - Learn how to add reservations
+  - S9caad1a7: New settings
+    suites:
+    - S8bf59afa: new settings
+      tests:
+      - T00000C79: C79 Expand the drop down of new settings
+      - T00000C81: C81 Open settings
+      - T00000C80: C80 Open COVID-19 settings
+    - Sc90c5085: settings
+      suites:
+      - S6a7f6237: general
+        suites:
+        - Scd6f5681: language&region
+          tests:
+          - T000C1555: C1555 Check that the default date format is 'Day.Month.Year'
+          - T000C1556: C1556 Set the date format to 'Month/Day/Year'
+          - T000C1557: C1557 Set the date format as 'Year-Month-Day'
+          - T000C1558: C1558 Set the date format as 'Day Month Year'
+        - Sc35a14f1: customer tags
+          tests:
+          - T0000C144: C144 Cancel removing the tag
+          - T0000C145: C145 Remove the tag (+ check in relatIn and booqIn)
+          - T0000C146: C146 Cancel editing the tag
+          - T0000C147: C147 Edit the tag (+ check in relatIn and booqIn)
+          - T0000C148: C148 Cancel adding a new Tag
+          - T0000C154: C154 Check that you cannot create a tag with the text 'VIP' and 'Blacklist'
+          - T0000C160: C160 Add a new tag with with special (German) letters in the text
+          - T0000C161: C161 Add a new Tag (+ check in relatIn and booqIn)
+        - S8df31b51: statuses
+          tests:
+          - T0000C224: C224 Enable the 'NO SHOW' status display on the dashboard
+        - Sd89a4f93: shared account
+          tests:
+          - T0000C271: C271 Check that the global settings are in the local settings of the restaurant
+          - T0000C272: C272 Configure the fields for shared account in local restaurant settings
+          - T0000C273: C273 Reset restaurant settings to global settings
+          - T0000C274: C274 Create reservation as a shared account with global settings
+          - T0000C275: C275 Create reservation as a shared account with local settings
+          - T0000C276: C276 Edit reseration as a shared account with global settings
+          - T0000C277: C277 Edit reseration as a shared account with local settings
+          - T0000C278: C278 Edit two reservation fields as a shared account, one should clear the 'creator' field
+      - Sb5530984: shifts
+        suites:
+        - S74a75ef9: shifts
+          tests:
+          - T00000C84: C84 Set the shift repetition to be active throughout the week
+          - T00000C85: C85 Set the shift time range range to keep them active throughout the day
+          - T0000C197: C197 [UNNECESSARY] Set the repetition of the shift to be active only one day per week
+          - T0000C214: C214 Enable Braintree for the shifts
+          - T0000C215: C215 Enable Braintree for the shifts - check that 'amount' and 'Link to T&C' are required
+          - T0000C248: C248 Display shift lock settings in shift settings
+          - T000C1646: C1646 Enable room for the shifts
+          - T000C4201: C4201 Check "auto-dismiss reservation" flag is displayed on shift payment settings
+          - T000C6146: C6146 Set online buffer on advanced shift capacity settings
+          - T000C6349: C6349 Set the shift capacity
+          - T000C6350: C6350 Set the capacity for seats bookable online
+          - T000C6385: C6385 Set 'additional information in the widget' text
+          - T000C6386: C6386 Enable 'mark infos on widget' checkbox
+        - Sd2ddd1b8: group requests
+          tests:
+          - T000C1663: C1663 Activate group reservation with default settings
+          - T000C1588: C1588 Set the max number of groups per shif
+          - T000C1591: C1591 Edit the max number of groups per shif
+          - T000C1593: C1593 Set the days ahead request deadline
+          - T000C1595: C1595 Edit and increase the days ahead request deadline
+          - T000C1597: C1597 [UPDATED]Set the default group seating time
+          - T000C1648: C1648 [UPDATED]Edit the default group seating time
+          - T000C1650: C1650 Add category for group requests
+          - T000C1652: C1652 Set the total amount of people for all group requests
+          - T000C1655: C1655 Edit the total amount of people for all group requests
+          - T000C1657: C1657 [UPDATED]Set the advanced group seating times
+          - T000C1659: C1659 [Upadted] Remove the second advanced group seating times
+          - T000C1661: C1661 [Updated] Edit the advanced group seating times
+        - S5a86dbc0: payments
+          tests:
+          - T000C4684: C4684 Enable Payments for shift
+        - S2dc5df40: seating times
+          tests:
+          - T000C7013: C7013 Open Seating Times settings
+          - T000C6990: C6990 Set the default duration of reservation
+          - T000C6991: C6991 Set the online duration of reservation
+          - T000C6992: C6992 Set the WalkIn duration of reservation
+          - T000C6994: C6994 Set the next range of 'person' for other durations
+          - T000C6995: C6995 Check if default duration is correctly set for reservation created in booqIn
+          - T000C6997: C6997 Check if online duration is correctly set for reservation created in widget
+          - T000C6998: C6998 Check if WalkIn duration is correctly set for WalkIn reservation created in booqIn
+          - T000C6999: C6999 Check if WalkIn duration is correctly set for WalkIn reservation created in widget
+          - T000C7002: C7002 Check if default duration is correctly set for next 'person' rang added
+          - T000C7004: C7004 Check if online duration is correctly set for next 'person' rang added
+          - T000C7005: C7005 Check if WalkIn duration is correctly set for next 'person' rang added
+          - T000C7006: C7006 Check if '0' in every type of duration set it till the end of shift
+          - T000C7007: C7007 Check if default duration is taken for online reservation when other types of duration are not set
+          - T000C7009: C7009 Check if default duration is taken for WalkIn reservation when other types of duration are not set
+          - T000C7010: C7010 Check if duration from above 'person range' is taken for online reservations when default duration is empty
+          - T000C7011: C7011 Check if duration from above 'person range' is taken for WalkIn reservations when default duration is empty
+        - Sefc57457: auto checkout
+          tests:
+          - Tf5020b00: Check if the ‘never' option does not update the reservation to ‘departed’ status
+          - T5ebb2dfe: Check if the ‘Reservation end time is met' option does update the reservation to ‘departed’ status only when reservation is in 'seated’ status
+          - Tfd533766: Check if the ‘Reservation end time is met' option doesn't update the reservation to ‘departed’ status when reservation is not in 'seated’ status
+          - Tb7213563: Check if the ‘following status is set' option updates the reservation status to 'departed’
+          - T990257db: Check if a ‘review' email is sent when the reservation automatically changed to 'departed’
+          - T6309f81d: Check if reservations gets automatically checkout after the time set in 'delay in minutes'
+      - S518bf706: emails
+        tests:
+        - T0007622: C7622 Configure remainders
+      - S4d3d04da: sms
+        tests:
+        - T0007613: C7613 Enable SMS feature for restaurant
+        - T000C7615: C7615 Enable SMSs in shift for reservations made in booqIn
+        - T000C7616: C7616 Enable SMSs in shift for reservations made in widget
+        - T000C7617: C7617 Enable SMS remainders in shift
+        - T000C7621: C7621 Set the SMS template
+        - T000C7614: C7614 Verify the SMS sender name
+        - T000C7618: C7618 Check if remainder SMS template is took from email remainder template
+        - T000C7619: C7619 Check if confirmation SMS is sent when reservation created in booqIn
+        - T000C7620: C7620 Check if confirmation SMS is sent when reservation created in widget
+        - T000C7623: C7623 Check if mergetags are correctly displayed in confirmation SMS
+        - T000C7624: C7624 Check if 'IF conditions mergetags' works correctly
+      - S28054dc7: widget
+        tests:
+        - T0000C118: C118 Enabling the Company as an optional field in the widget
+        - T0000C119: C119 Check that the 'Privacy policy link' field is required
+        - T0000C120: C120 Enabling the Privacy policy as a required field in the widget
+        - T0000C121: C121 Check that the 'Terms and conditions link' field is required
+        - T0000C122: C122 Enabling the Terms and conditions as a required field in the widget
+        - T0000C123: C123 Enabling the address as a required field in the widget
+        - T0000C124: C124 Enabling the address as an optional field in the widget
+        - T0000C125: C125 Enabling the date of birth as a required field in the widget
+        - T0000C205: C205 In the 'Contact creation', select "Match phone, e-mail address, name and surname"
+        - T0000C235: C235 Open widget customization settings
+        - T000C1577: C1577 Enabling the gender to be displayed in the widget
+      - S9df1e351: rooms
+        tests:
+        - T000C1645: C1645 Add rooms and tables
+      - S048be035: vouchers
+        tests:
+        - T000C1542: C1542 Add new item
+        - T000C1544: C1544 Remove an item
+        - T000C1545: C1545 Edit the voucher details
+      - S345d394f: covid-19
+        tests:
+        - T00000C77: C77 Checking the activity of the save changes button for the 'Register multiple guests' option
+        - T00000C78: C78 Checking the activity of the save changes button for the 'Privacy policy for COVID registration' option
+        - T0000C169: C169 Enabling the Privacy policy for COVID registration as required field in the widget
+        - T0000C170: C170 Check that the 'Privacy policy for COVID registration link' field is required
+        - T0000C171: C171 Enable multiple customers registration as optional fields in the widget @automated
+        - T0000C172: C172 [LOGIC HAS CHANGED] Enable multiple customers registration as mandatory fields in the widget
+        - T0000C239: C239 Check that after activating 'Multiple customers registration', at least one companion information checkbox must be selected
+        - T0000C240: 'C240 Open COVID-19: Guest registrationsettings'
+        - T000C1582: C1582 Enabling the gender to be displayed in the widget for attendees
+      - S27db4f7e: integrations
+        tests:
+        - T0000C212: C212 Integrate braintree
+        - T0000C213: C213 [UNNECESSARY] Integrate braintree with invalid data
+      - S1e6d3b19: holidays
+        tests:
+        - T000C2180: C2180 Add Holiday
+    - Sb8d4ba8f: users/roles
+      tests:
+      - T00000C86: C86 Relog to account-owner
+      - T0000C269: C269 Add the user a shared account status
+      - T0000C280: C280 Create service role
+      - T000C1571: C1571 Enable 'sellIn' checkbox in account-owner role
+    - S5a57a3c4: widget preview
+      tests:
+      - T0000C126: C126 Open widget preview
+      - T0000C127: C127 Check that after setting the 'date of birth' field is required in the widget
+      - T0000C128: C128 Creating a reservation with the customer's date of birth
+      - T0000C130: C130 Creating a reservation with the customer's address data
+      - T0000C131: C131 Check that after setting the 'address fields' field are optional in the widget
+      - T0000C132: C132 Check that after setting the 'address fields' field are required in the widget
+      - T0000C133: C133 Creating a reservation with the customer's company name
+      - T0000C134: C134 Check that when enabled the 'Company' field is optional in the widget
+      - T0000C135: C135 Creating a reservation with the acceptance of 'terms & conditions'
+      - T0000C136: C136 Check that after setting the 'terms & conditions' field is required in the widget
+      - T0000C137: C137 Check if the terms & conditions page opens
+      - T0000C138: C138 Creating a reservation with the acceptance of 'privacy policy'
+      - T0000C139: C139 Check that after setting the 'privacy policy' field is required in the widget
+      - T0000C140: C140 Check if the privacy policy page opens
+      - T0000C167: C167 Create reservations using the widget
+      - T0000C168: C168 Check that you can only create one reservation per day for the same customer
+      - T0000C178: C178 Creating a reservation with filling in the registration fields of multiple customers
+      - T0000C179: C179 Check that after setting the 'multiple customers registration' field are optional in the widget
+      - T0000C180: C180 [LOGIC HAS CHANGED] Check that after setting the 'multiple customers registration ' fields are required in the widget
+      - T0000C216: C216 Creating a reservation with the credit card data
+      - T0000C217: C217 Check that credit card details are mandatory if Braintree is enabled
+      - T0000C218: C218 Check that the 'Terms and conditions link' field is required if Braintree is enabled
+      - T0000C219: C219 Check the validation of credit card fields when braintree is enabled
+      - T0000C238: C238 Check that personal data fields are required in the widget
+      - T0000C262: C262 Check that after locking the shift for guests, it is not available in the online widget
+      - T0000C263: C263 Check that after locking the shift for staff, it is not available in the online widget
+      - T0000C264: C264 Check that after locking selected time slot for guests, it is not available in the online widget
+      - T0000C265: C265 Check that after locking selected time slot for staff, it is not available in the online widget
+      - T000C1546: C1546 Buy a voucher
+      - T000C1548: 'C1548 Voucher: Check that personal data is required'
+      - T000C1547: 'C1547 Voucher: Check that you cannot proceed to the next step without selecting the item'
+      - T000C1549: C1549 Buy a voucher providing credit card details
+      - T000C1550: 'C1550 Voucher: Check that credit card details are mandatory if Braintree is enabled'
+      - T000C1580: C1580 Check that after enabling the 'gender' field, it is displayed in new widget
+      - T000C1583: C1583 Check that after enabling the 'gender' field for attendees it is displayed in widget
+      - T000C2164: C2164 Check that holiday message is displayed when attempting to book directly during a holiday
+      - T000C2165: C2165 Check that holiday message is displayed when selecting a holiday date
+      - T000C2166: C2166 Check that 'No Active Shift' notification is shown when selecting a holiday date and no holiday message is set
+      - T000C2167: C2167 Check that 'No Active Shift' notification is shown when attempting to book directly on a holiday date while no holiday message is set
+      - T000C2205: C2205 check validation of credit card when payments is enabled
+      - T000C6387: C6387 Check that 'additional information in the widget' message is displayed in widget
+      - T000C1589: C1589 Create a reservation within the max number of groups per shift limit
+      - T000C1590: C1590 Check that you cannot make a reservation for the same day after exceeding the limit of the maximum number of groups per shift
+      - T000C1592: C1592 Check that after editing and increasing the limit of the maximum number of groups per shift, you can create another reservation for the same day
+      - T000C1594: C1594 Check that after setting 'Days ahead request deadline' to 1, you cannot make a reservation for the same day, but only for the two days later
+      - T000C1596: C1596 Check that after editing and increasing the limit of the maximum number of groups per shift, you can create another reservation for the same day
+      - T000C1598: C1598 Create a group reservation
+      - T000C1653: C1653 Create a reservation within the total amount of people for all group requests
+      - T000C1654: C1654 Check that you cannot make a reservation for the same day after exceeding the total amount of people for all group requests
+      - T000C1656: C1656 Check that after editing and increasing the limit of the total amount of people for all group requests, you can create another reservation for the same day
+      - T000C1664: C1664 Check that it is not possible to make a group reservation if 'Max number of groups per shift' is set to 0
+      - T000C6686: C6686 Check that fully booked timeslots are not displayed in suggestions in widget
+      - T000C6687: C6687 Check that fully booked shift is not displayed in suggestions in widget
+      - T0000C173: C173 Create walk in reservations using the widget
+      - T0000C175: C175 Creating a reservation with the acceptance of 'privacy policy for COVID registration'
+      - T0000C176: C176 Check that after setting the 'privacy policy for COVID registration' field is required in the widget
+      - T0000C177: C177 Check if the 'privacy policy for COVID registration' page opens
+      - T0000C181: C181 Check that after setting the 'multiple customers registration' field are optional in the walk in widget
+      - T0000C182: C182 [LOGIC HAS CHANGED] Check that after setting the 'multiple customers registration ' fields are required in the walk in widget
+      - T0000C183: C183 Creating a reservation with filling in the registration fields of multiple customers in walk in widget
+      - T0000C237: C237 Open widget Link / QR code generator
+      - T000C7788: C7788 Check that shift suggestions screen is opened in widget when parallel shifts are set
+      - T000C7789: C7789 Check that shift suggestions screen is not opened in WalkIn widget when parallel shifts are set
+      - T000C7876: C7876 Create an online reservation with comment and check if it's correctly displayed in booqIn
+    - S91588dda: account
+      tests:
+      - T000C6326: C6326 Create a new restaurant for the same account owner
+      - T000C6327: C6327 Create a group of restaurants
+      - T000C6328: C6328 Create a group of restaurants with shared contacts
+      - T000C6333: C6333 Disable 'shared contacts' option for group of restaurant
+      - T000C6337: C6337 Delete a group of restaurants
+      - T000C6329: C6329 Check if contacts in relatIn are successfully merged
+      - T000C6330: C6330 Check if merged contacts are correctly displayed in relatIn
+      - T000C6331: C6331 Deleting customer in one restaurant removes it from both restuarnts
+      - T000C6332: C6332 Deleting customers is not possible if they have booked a reservation in the future in any of restaurant
+      - T000C6334: C6334 Customers' data with bookings remains after disabling 'shared contacts'
+      - T000C6335: C6335 Customers' data without bookings are removed after disabling 'shared contacts'
+      - T000C6336: C6336 Customers contacts are not shared anymore after deleting group of restaurant
+      - T000C6338: C6338 Enable widget suggestions for a group of restaurants
+      - T000C6339: C6339 Create a reservation using suggestions in restaurant B via restaurant A widget
+      - T000C6341: C6341 Check that 'group suggestions' are not displayed in restaurant B when only in restaurant A enabled.
+      - T000C6342: C6342 Enable widget restaurant picker for a group of restaurants
+      - T000C6343: C6343 Change restaurant via restaurant picker and create a reservation
+    - S0ca25b66: logout
+      tests:
+      - T00000C87: C87 User logout
+  - Sb463855e: old settings
+    tests:
+    - T000C2066: C2066 Open 'Shift' tab
+    - T00000C88: C88 Enable unreleased features
+    - T0000C143: C143 Enable the 'Customer tags' feature
+    - T0000C206: C206 Enable the 'Full reservation history' feature
+    - T0000C207: C207 Diable the 'Full reservation history' feature
+    - T0000C211: C211 Enable the 'Braintree settings' feature
+    - T0000C225: C225 Enable the 'Translation status' feature
+  - Sd4c20ada: superuser settings
+    tests:
+    - T00000C83: C83 Register wordpress restaurant + Start aleno
+    - T0000C101: C101 Register wordpress restaurant + Open widget
+    - T0000C270: C270 Configure the fields for shared account in global settings
+  - S7209baea: Payments
+    suites:
+    - S03d862b3: No show
+    - S145c86ac: Sell Items
+      tests:
+      - T000C6347: C6347 Enable 'sell items' functionality and activate it in shift
+      - T000C6345: C6345 Check that sellItems menu is shown when sellItems is active
+      - T000C6348: C6348 Check that sellItems amount is shown on email cc link
+      - T000C7793: C7793 Check that retrying payment is possible when sell items is enabled
+      - T000C7792: C7792 Check that auto-dismissed reservations can be recreated when sell items is enabled
+      - T000C7791: C7791 Check that reservations without valid cc details are auto dismissed after 5 minutes when sell items is enabled
+  - S5206f5dc: brain
+    tests:
+    - T000C6645: C6645 Enable 'useBrainSuggestions in the widget' parameter
+    - T000C6646: C6646 Enable 'useBrainSuggestions in the api' parameter
+    - T000C7091: C7091 Check that reservations on combined tables are correctly assigned
+    - T000C7093: C7093 Check that table assignments match Brain priorities
+    - T000C7095: C7095 Check that table reassignments match Brain order
+    - T000C7096: C7096 Check that table reassignments match Brain priorities
+    - T000C7097: C7097 Check that table reassignments match Brain order + priorities
+    - T000C7099: C7099 Check that excluded tables are not assigned to reservations
+    - T000C7100: C7100 Set Brain priorities
+    - T000C7101: C7101 Set Brain order
+    - T000C7102: C7102 Set full Brain combinations
+    - T000C7103: C7103 Set Brain exclusions
+    - T000C7106: C7106 Check Brain suggestions when guestCount does not match table capacity on a shift
+    - T000C7107: C7107 Check that only reservations with tableCapacity matching guestCount are auto-assigned to a table
+    - T000C7108: C7108 Check that reservations matching time on a subsequent shift are shown on both shifts
+    - T000C7109: C7109 Check that table assignment durations match default 'durationOfReservation'
+    - T000C7110: C7110 Check table assignments match 'BrainMinimumStayTime' setting
+    - T000C7111: C7111 Set Brain minimum stay time
+    - T000C7112: C7112 Set default duration of reservation
+    - T000C7113: C7113 Enable Brain settings
+    - T000C7114: C7114 Check that reservation is not created via widget when there is no available table for selected guestCount
+    - T000C7115: C7115 Create a room plan
+    - T000C7116: C7116 Check reservation is crated via widget when 'useBrainSuggestionsInTheWidget' is enabled
+    - T000C7117: C7117 Create a parallel shift
+    - T000C7612: C7612 Check that Brain widget workflow works correctly  when parallel shifts are set
