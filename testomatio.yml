@@ -463,6 +463,11 @@
     - T000C7841: C7841 Create a reservation with comment and check that it's correctly displayed
     - T000C7842: C7842 Add comment in existing reservation and check that it's correctly displayed
     - T000C7843: C7843 Delete comment from reservation and check that it's not displayed anymore
+    - T000C8019: C8019 Create shift
+    - T000C8020: C8020 Check that new shift is shown on shift selection menu
+    - T000C8054: C8054 Create confirmed reservation in widget and check if email is visible in preview
+    
+
   - S83a60fb2: seatIn
     tests:
     - T00000C91: C91 Creating a reservation with setting the number of guests
@@ -878,3 +883,7 @@
     - T000C7116: C7116 Check reservation is crated via widget when 'useBrainSuggestionsInTheWidget' is enabled
     - T000C7117: C7117 Create a parallel shift
     - T000C7612: C7612 Check that Brain widget workflow works correctly  when parallel shifts are set
+    - T000C8150: C8150 Check that Brain configurations are inherited at lower levels
+    - T000C8151: C8151 Check that inherited Brain configurations can be deactivated
+    - T000C8152: C8152 Check that updating or removing Brain configurations is reflected on lower levels
+    - T000C8163: C8163 Check that reservations are auto-reassigned when guest count is updated
