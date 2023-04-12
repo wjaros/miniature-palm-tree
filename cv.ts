@@ -1,9 +1,11 @@
+// Curriculum vitae
+
 import { Company, School } from types.ts
 
 const candidate = {
     firstName: "Wojciech",
     lastName: "Jaros",
-    role: "Test Automation Engineer",
+    expertise: "Test Automation Engineer",
     address = {
         country: "Poland",
         city: "Warsaw",
@@ -13,16 +15,18 @@ const candidate = {
 };
 
 function experience() {
-    const aleno_me: Company = {
+    const Aleno_me: Company = {
         timeline: "01.05.2022 - present",
         role: "Test Automation Engineer",
         responsibilities: [
             "creating and maintenance of automated E2E tests",
+            "updating and improving existing E2E tests",
             "verification of automated tests reports",
-            "buiilding infrastructure for E2E tests"
+            "buiilding infrastructure for E2E tests",
+            "API testing",
         ]
     };
-    const adrendCode: Company = {
+    const AdrendCode: Company = {
         timeline: " 01.01.2020 - 30.04.2022",
         role: "Test Automation Engineer",
         responsibilities: [
@@ -57,7 +61,7 @@ function experience() {
         role: " Junior Level Designer",
         responsibilities: [
             "level degign",
-            "game desgign",
+            "game design",
             "video editing",
             "UI animation",
             "UI design",
@@ -95,10 +99,12 @@ const technnologies = [
     "Agile",
     "JavaScript",
     "TypeScript",
+    "Docker",
     "node.js",
     "React",
-    "python",
+    "Python",
     "Postman",
+    "GraphQL",
     "CodeceptJS",
     "Playwright",
     "Protractor",
@@ -112,8 +118,4 @@ const technnologies = [
     "Windows"
 ];
 
-//I AGREE TO THE PROCESSING OF PERSONAL DATA PROVIDED IN THIS DOCUMENT FOR REALISING THE
-// RECRUITMENT PROCESS PURSUANT TO THE PERSONAL DATA PROTECTION ACT OF 10 MAY 2018 (JOURNAL OF LAWS 2018, ITEM 1000)
-// AND IN AGREEMENT WITH REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL OF 27 APRIL 2016
-// ON THE PROTECTION OF NATURAL PERSONS WITH REGARD TO THE PROCESSING OF PERSONAL DATA AND ON THE FREE MOVEMENT OF SUCH DATA,
-// AND REPEALING DIRECTIVE 95/46/EC (GENERAL DATA PROTECTION REGULATION).
+//I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).
